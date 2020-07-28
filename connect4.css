@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #925E78;
+}
+
+#game {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.7);
+  margin: 4px;
+  padding: 4px;
+}
+
+header {
+  margin: 5px;
+  padding: 5px;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 40px;
+  font-family: 'Staatliches', cursive, sans-serif;
+  color: #F2EDEB;
+}
+
+/* game board table */
+
+#board td {
+  width: 70px;
+  height: 70px;
+  border: solid 1px #F2EDEB;
+}
+
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+  margin: 5px;
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  animation-name: drop-piece;
+  animation-duration: 1200ms;
+}
+
+.piece.p1 {
+  background-color: rgba(255, 0, 0, 0.8);
+  border: 1px solid #000000;
+
+}
+
+.piece.p2 {
+  background-color: rgba(0, 0, 255, 0.8);
+  border: 1px solid #000000;
+}
+
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+  border: dashed 1px #BD93BD;
+}
+
+#column-top td:hover {
+  background-color: #FABC2A;
+}
+
+@keyframes drop-piece {
+  from {
+    transform: translateY(-900%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #game {
+    width: 85%;
+    display: block;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+  }
+}
