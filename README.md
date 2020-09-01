@@ -5,6 +5,6 @@
 ### Things to add
 ---
 
-* Restart button
+~~Restart button~~
 * Score keeping
 
