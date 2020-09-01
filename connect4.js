@@ -60,6 +60,15 @@ function makeHtmlBoard() {
   }
 }
 
+const restartBtn = document.getElementById('btn');
+restartBtn.addEventListener('click', function () {
+  board = [];
+  makeBoard();
+  const board2 = document.getElementById('board');
+  board2.innerHTML = '';
+  makeHtmlBoard();
+});
+
 /** findSpotForCol: given column x, return top empty y (null if filled) */
 
 function findSpotForCol(x) {
@@ -85,8 +94,9 @@ function placeInTable(y, x) {
 
 /** endGame: announce game end */
 
+
 function endGame(msg) {
-  alert(msg);
+  setTimeout(() => alert(msg), 1000)
 }
 
 /** handleClick: handle click of column top to play piece */
